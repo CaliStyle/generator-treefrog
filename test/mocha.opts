@@ -1,0 +1,8 @@
+./test/unit/**/*.test.js
+--reporter spec
+--recursive
+--timeout 120000
+--full-trace
+--slow 50
+--no-exit
+--globals i
