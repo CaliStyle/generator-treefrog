@@ -48,7 +48,7 @@
     "mkdirp": "^0.5.1",
     "path-exists": "^2.0.0",
     "print-message": "1.4.0",
-    "treefrog": "latest",
+    "trailpack": "latest",
     "trails": "latest",
     "update-notifier": "0.5.0",
     "yeoman-environment": "^1.4.0",
