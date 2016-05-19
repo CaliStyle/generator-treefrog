@@ -16,5 +16,34 @@ export default [
     name: 'desc',
     message: 'Controller Description',
     default: 'TODO document Controller'
+  },
+  {
+    type: 'list',
+    name: 'frontend',
+    message: 'Controller Frontend Framework',
+    default: 'angular',
+    choices: [
+    	'angular',
+    	'react',
+    	'other'
+    ]
+  },
+  {
+    when: responses => {
+      return responses['frontend'] == 'other'
+    },
+    name: 'frontend-other',
+    message: 'What is the name of this frontend?'
+  },
+  {
+    type: 'list',
+    when: responses => {
+      return responses['frontend'] == 'angular'
+    },
+    name: 'angular-version',
+    message: 'What angular version do you want to use?',
+    choices: [
+      '2'
+    ]
   }
 ];
