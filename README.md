@@ -11,9 +11,13 @@ Treefrog Yeoman Generator.
 
 Treefrog helps interconnect Angular 2 and React frontends.
 
+## Install 
+```sh
+$ npm install generator-treefrog -g
+
 ## Usage
 ```sh
-$ yo tree --help
+$ yo treefrog --help
 
 Usage:
   yo treefrog [options] 
@@ -61,5 +65,5 @@ information on how our projects are organized and how to get started.
 [codeclimate-url]: https://codeclimate.com/github/CaliStyle/generator-treefrog
 [gitter-image]: http://img.shields.io/badge/+%20GITTER-JOIN%20CHAT%20%E2%86%92-1DCE73.svg?style=flat-square
 [gitter-url]: https://gitter.im/CaliStyle/generator-treefrog
-[twitter-image]: https://img.shields.io/twitter/follow/CaliStyle.svg?style=social
+[twitter-image]: https://img.shields.io/twitter/follow/trailsjs.svg?style=social
 [twitter-url]: https://twitter.com/trailsjs

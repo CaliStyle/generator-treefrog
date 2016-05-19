@@ -2,13 +2,13 @@ import path from 'path';
 import { assert, test } from 'yeoman-generator';
 
 describe('treefrog:app', () => {
-  describe('Should create treefrog from treefrog/archetype', () => {
+  describe('Should create treefrog from trails/archetype', () => {
     before(done => {
       test
         .run(path.join(__dirname, '..', '..', 'src', 'app'))
         .withPrompts({
           name: 'treefrog-test',
-          authorName: 'trailsjs',
+          authorName: 'treefrog',
           authorEmail: 'hello@trailsjs.io',
           license: 'MIT'
         })
