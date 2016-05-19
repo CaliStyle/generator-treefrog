@@ -14,6 +14,7 @@ Treefrog helps interconnect Angular 2 and React frontends.
 ## Install 
 ```sh
 $ npm install generator-treefrog -g
+```
 
 ## Usage
 ```sh
