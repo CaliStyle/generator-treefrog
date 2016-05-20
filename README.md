@@ -70,7 +70,7 @@ information on how our projects are organized and how to get started.
 [ci-image]: https://img.shields.io/travis/CaliStyle/generator-treefrog.svg?style=flat-square&label=Linux%20/%20OSX
 [ci-url]: https://travis-ci.org/CaliStyle/generator-treefrog
 [appveyor-image]: https://img.shields.io/appveyor/ci/CaliStyle/generator-treefrog/master.svg?style=flat-square&label=Windows
-[appveyor-url]: https://ci.appveyor.com/project/CaliStyle/generator-trails
+[appveyor-url]: https://ci.appveyor.com/project/CaliStyle/generator-treefrog
 [codeclimate-image]: https://img.shields.io/codeclimate/github/CaliStyle/generator-treefrog.svg?style=flat-square
 [codeclimate-url]: https://codeclimate.com/github/CaliStyle/generator-treefrog
 [gitter-image]: http://img.shields.io/badge/+%20GITTER-JOIN%20CHAT%20%E2%86%92-1DCE73.svg?style=flat-square

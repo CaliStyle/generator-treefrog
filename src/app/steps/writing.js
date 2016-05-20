@@ -33,23 +33,23 @@ export default {
         }
     });
 
-    mkdirp(this.destinationPath('src'), function(err) { 
-        // path exists unless there was an error
-        if(err){
-          self.log(chalk.blue('src directory already exists'));
-        }else{
-          self.log(chalk.green('src directory created'));
-        }
-    });
+    // mkdirp(this.destinationPath('src'), function(err) { 
+    //     // path exists unless there was an error
+    //     if(err){
+    //       self.log(chalk.blue('src directory already exists'));
+    //     }else{
+    //       self.log(chalk.green('src directory created'));
+    //     }
+    // });
 
-    mkdirp(this.destinationPath('views'), function(err) { 
-        // path exists unless there was an error
-        if(err){
-          self.log(chalk.blue('views directory already exists'));
-        }else{
-          self.log(chalk.green('views directory created'));
-        }
-    });
+    // mkdirp(this.destinationPath('views'), function(err) { 
+    //     // path exists unless there was an error
+    //     if(err){
+    //       self.log(chalk.blue('views directory already exists'));
+    //     }else{
+    //       self.log(chalk.green('views directory created'));
+    //     }
+    // });
 
     //this.fs.write(this.destinationPath('app/index.js'), '//Treefrog is awesome')
   }

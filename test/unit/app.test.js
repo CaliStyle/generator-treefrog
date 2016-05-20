@@ -18,7 +18,9 @@ describe('treefrog:app', () => {
 
     it('Should properly create root files', () => {
       assert.file([
-        'app'
+        'app',
+        // 'views',
+        // 'src'
       ]);
     });
     
