@@ -1,4 +1,7 @@
 Generators:
+  
+  Initilize App
+    yo treefrog
 
   Create New Api
     yo treefrog:api <api-name>

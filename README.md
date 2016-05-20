@@ -9,19 +9,25 @@
 
 Treefrog Yeoman Generator.
 
-Treefrog helps interconnect Angular 2 and React frontends.
+Treefrog helps interconnect React and Angular frontends with Trails Apps.
 
 ## Install 
 ```sh
 $ npm install generator-treefrog -g
 ```
 
+## Yeoman
+You will need Yeoman installed to use the generator
+
 ## Usage
 ```sh
+
+$ cd <yourAppDirectory>
+
 $ yo treefrog --help
 
 Usage:
-  yo treefrog [options] 
+$ yo treefrog [options] 
 
 Options:
         --help          # Print the generator's options and usage
@@ -30,6 +36,9 @@ Options:
         --skip-update   # Do not check for generator's updates       Default: false
 
 Generators:
+  
+  Initialize App
+    yo treefrog
 
   Create New Api
     yo treefrog:api <api-name>

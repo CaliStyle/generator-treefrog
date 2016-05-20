@@ -8,8 +8,8 @@ import printMessage from 'print-message';
 
 export default function () {
   printMessage([
-    `Your ${chalk.green('Treefrog')} module has been created!`,
-    `---`
+    `Your ${chalk.green('Treefrog')} app has been initialized!`,
+    `----`
   ], {
     printFn: this.log
   });

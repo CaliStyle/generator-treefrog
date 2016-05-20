@@ -27,9 +27,9 @@ export default {
   },
 
   sayHello: function () {
-    this.log('========================================');
+    this.log('==========================================');
     this.log('Get ready to hop on a new ' + chalk.green('Treefrog module') + '!');
-    this.log('========================================');
+    this.log('==========================================');
   },
 
   checkUpdates: function () {
@@ -43,6 +43,7 @@ export default {
   },
 
   checkTrailpack: function() {
-      this.log('Checking if trailpack-treefrog is installed...');
+    this.log(chalk.yellow('Checking if trailpack-treefrog is installed...'));
+    
   }
 }

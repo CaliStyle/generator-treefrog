@@ -7,6 +7,9 @@ describe('treefrog:service', () => {
     before(done => {
       test
         .run(path.join(__dirname, '..', '..', 'src', 'service'))
+        .withPrompts({
+          frontend: 'react'
+        })
         .withArguments(['test'])
         .on('end', done)
     });

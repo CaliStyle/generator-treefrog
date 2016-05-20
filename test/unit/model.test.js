@@ -7,6 +7,9 @@ describe('treefrog:model', () => {
     before(done => {
       test
         .run(path.join(__dirname, '..', '..', 'src', 'model'))
+        .withPrompts({
+          frontend: 'react'
+        })
         .withArguments(['test'])
         .on('end', done)
     });

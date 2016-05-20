@@ -21,9 +21,9 @@ export default [
     type: 'list',
     name: 'frontend',
     message: 'Controller Frontend Framework',
-    default: 'angular',
+    default: 'react',
     choices: [
-    	'angular',
+    	'angular (not yet supported)',
     	'react',
     	'other'
     ]

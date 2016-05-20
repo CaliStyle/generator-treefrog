@@ -7,6 +7,9 @@ describe('treefrog:controller', () => {
     before(done => {
       test
         .run(path.join(__dirname, '..', '..', 'src', 'controller'))
+        .withPrompts({
+          frontend: 'react'
+        })
         .withArguments(['test'])
         .on('end', done)
     });

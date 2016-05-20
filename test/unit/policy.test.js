@@ -7,6 +7,9 @@ describe('treefrog:policy', () => {
     before(done => {
       test
         .run(path.join(__dirname, '..', '..', 'src', 'policy'))
+        .withPrompts({
+          frontend: 'react'
+        })
         .withArguments(['test'])
         .on('end', done)
     });
