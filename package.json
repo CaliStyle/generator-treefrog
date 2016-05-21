@@ -1,6 +1,6 @@
 {
   "name": "generator-treefrog",
-  "version": "1.0.0-alpha-1",
+  "version": "1.0.0-alpha-3",
   "description": "Treefrog Yeoman Generator for Trails",
   "main": "generators/app/index.js",
   "keywords": [

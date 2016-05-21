@@ -7,7 +7,8 @@ describe('treefrog:app', () => {
       test
         .run(path.join(__dirname, '..', '..', 'src', 'app'))
         .withPrompts({
-          frontend: 'react'
+          frontend: 'react',
+          style: 'foundation-apps'
         })
         .withOptions({
           'skip-update': true,
@@ -23,13 +24,24 @@ describe('treefrog:app', () => {
         // 'src'
       ]);
     });
+
+    it('Should properly create config files', () => {
+      assert.file([
+        'config/treefrog.js'
+      ]);
+    });
     
+    it('should set correct treefrog.js file', () => {
+      assert.fileContent([
+        ['config/treefrog.js', /frontend: \'react\'/],
+        ['config/treefrog.js', /style: \'foundation-apps\'/]
+      ])
+    })
+
     // it('should see Treefrog in index.js', () => {
     //   assert.fileContent('app/index.js', /Treefrog is awesome/)
     // });
-    // it('should set correct license in package.json', () => {
-    //   assert.JSONFileContent('package.json', { license: 'MIT' })
-    // })
+    
   });
 });
 
