@@ -11,6 +11,10 @@ Treefrog Yeoman Generator.
 
 Treefrog helps interconnect React and Angular frontends with Trails Apps.
 
+## Status
+
+> ##### Stability: [1](http://nodejs.org/api/documentation.html#documentation_stability_index) - Experimental
+
 ## Install 
 ```sh
 $ npm install generator-treefrog -g
