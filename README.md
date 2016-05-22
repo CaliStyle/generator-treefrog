@@ -1,5 +1,7 @@
 # generator-treefrog
 
+[![Join the chat at https://gitter.im/CaliStyle/generator-treefrog](https://badges.gitter.im/CaliStyle/generator-treefrog.svg)](https://gitter.im/CaliStyle/generator-treefrog?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Gitter][gitter-image]][gitter-url]
 [![NPM version][npm-image]][npm-url]
 [![Linux + OSX Build Status][ci-image]][ci-url]
