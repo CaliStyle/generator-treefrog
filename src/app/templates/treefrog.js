@@ -1,12 +1,14 @@
 /**
  * Treefrog Configuration
- * (app.config.treefrog)
+ * REPL: `app.config.treefrog`
  *
- * Configure treefrog
- *
+ * Configured by `$ yo treefrog` 
+ * This file dictates how your files are generated.
  */
 
 module.exports = {
+	taskmanager: '<%= answers.taskmanager %>',
+	javascript: '<%= answers.javascript || "es6" %>',
 	frontend: '<%= answers.frontend %>',
 	style: '<%= answers.style %>'
 }

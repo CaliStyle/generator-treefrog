@@ -7,7 +7,7 @@ import Conflicter from 'yeoman-generator/lib/util/conflicter'
 const Util = module.exports = {
 
   /**
-   * Monkey-patch to support index.js file updating without confirmation
+   * Monkey-patch to support `index.js/main.js` file updating without confirmation
    */
   patchConflicter () {
     Conflicter.prototype.collision = function (file, cb) {
@@ -18,6 +18,11 @@ const Util = module.exports = {
         return;
       }
       else if (/index.js$/.test(file.path)) {
+        this.adapter.log.force(rfilepath);
+        cb('force');
+        return;
+      }
+      else if (/main.js$/.test(file.path)) {
         this.adapter.log.force(rfilepath);
         cb('force');
         return;
@@ -60,6 +65,15 @@ const Util = module.exports = {
 
   getRequireStatement (fileName) {
     return `exports.${fileName} = require('./${fileName}')\n`
+  },
+
+  getArrayRequireStatement (array, fileName) {
+    if(array.length > 0){
+      array.push('[require(\'' + fileName + '\')]');
+      return `${array}`;
+    }else{
+      return `[\nrequire('${fileName}')\n]`
+    }
   },
 
   getUpdatedIndexFile (fileName, fileContents) {

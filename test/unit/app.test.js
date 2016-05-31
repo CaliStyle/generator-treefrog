@@ -7,8 +7,11 @@ describe('treefrog:app', () => {
       test
         .run(path.join(__dirname, '..', '..', 'src', 'app'))
         .withPrompts({
-          frontend: 'react',
-          style: 'foundation-apps'
+          'taskmanager': 'webpack',
+          'frontend': 'angular',
+          'angular-version': 2,
+          'javascript': 'typescript',
+          'style': 'foundation-apps'
         })
         .withOptions({
           'skip-update': true,
@@ -19,9 +22,7 @@ describe('treefrog:app', () => {
 
     it('Should properly create root files', () => {
       assert.file([
-        'app',
-        // 'views',
-        // 'src'
+        'app'
       ]);
     });
 
@@ -33,7 +34,9 @@ describe('treefrog:app', () => {
     
     it('should set correct treefrog.js file', () => {
       assert.fileContent([
-        ['config/treefrog.js', /frontend: \'react\'/],
+        ['config/treefrog.js', /taskmanager: \'webpack\'/],
+        ['config/treefrog.js', /javascript: \'typescript\'/],
+        ['config/treefrog.js', /frontend: \'angular\'/],
         ['config/treefrog.js', /style: \'foundation-apps\'/]
       ])
     })
