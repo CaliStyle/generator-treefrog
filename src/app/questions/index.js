@@ -23,6 +23,11 @@ exports.default = [{
   message: 'Task Manager',
   default: 'webpack',
   choices: ['webpack', 'gulp (not yet supported)', 'grunt (not yet supported)']
+}, {
+  name: 'javascript',
+  message: 'How would you like to write your javascript?',
+  default: 'typescript',
+  choices: ['typescript', 'es6', 'es5']
 }, 
 
 // Question Tree to Respones
@@ -41,15 +46,6 @@ exports.default = [{
   message: 'What angular version do you want to use?',
   default: '2',
   choices: ['1 (not yet supported)', '2']
-}, {
-  type: 'list',
-  when: function when(responses) {
-    return responses['angular-version'] == '2';
-  },
-  name: 'javascript',
-  message: 'How would you like to write your javascript?',
-  default: 'typescript',
-  choices: ['typescript', 'es6', 'es5']
 }, {
   type: 'list',
   when: function when(responses) {
