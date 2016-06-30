@@ -11,7 +11,9 @@ describe('treefrog:app', () => {
           'frontend': 'angular',
           'angular-version': 2,
           'javascript': 'typescript',
-          'style': 'foundation-apps'
+          'style': 'foundation-apps',
+          'srcDir': 'src',
+          'outDir': 'dist'
         })
         .withOptions({
           'skip-update': true,
@@ -22,7 +24,7 @@ describe('treefrog:app', () => {
 
     it('Should properly create root files', () => {
       assert.file([
-        'app'
+        'src'
       ]);
     });
 

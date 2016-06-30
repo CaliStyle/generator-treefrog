@@ -56,17 +56,32 @@ export default {
 
     //this.fs.write(this.destinationPath('config/treefrog.js'), '//Treefrog is awesome')
 
-    mkdirp(this.destinationPath('app'), function(err) { 
+    mkdirp(this.destinationPath(self.answers.srcDir), function(err) { 
         // path exists unless there was an error
         if(err){
-          self.log(chalk.blue('app')+ ' directory already exists or could not create');
+          self.log(chalk.blue(self.answers.srcDir)+ ' directory already exists or could not create');
         }else{
-          self.log(chalk.green('app') + ' directory created');
+          self.log(chalk.green(self.answers.srcDir) + ' directory created');
         }
     });
 
   },
 
+
+  // javascript
+  typescript() {
+
+  },
+
+  es6() {
+
+  },
+
+  es5() {
+
+  },
+
+  //  frontend
   react() {
 
   },
@@ -75,11 +90,25 @@ export default {
 
   },
 
+  // style
   foundation() {
 
   },
 
   bootstrap() {
+
+  },
+
+  // taskmanager
+  gulp() {
+
+  },
+
+  webpack() {
+
+  },
+
+  grunt() {
 
   }
 
