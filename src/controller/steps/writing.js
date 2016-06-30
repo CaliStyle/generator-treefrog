@@ -8,7 +8,7 @@ import Util from '../../app/util'
 const SOURCE_CONTROLLER = 'Controller.js';
 const SOURCE_CONTROLLER_TEST = 'Controller.test.js';
 
-const DESTINATION_INDEX = 'api/controllers/index.js'
+const DESTINATION_INDEX = 'api/controllers/index.js';
 const DESTINATION_CONTROLLER = name => `api/controllers/${name}Controller.js`;
 const DESTINATION_CONTROLLER_TEST = name => `test/integration/controllers/${name}Controller.test.js`;
 
