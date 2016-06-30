@@ -62,7 +62,7 @@ Generators:
 ```
 
 ## Trail Map
-We have a Trail Map (Road Map) Please check out our [Trail Map](https://github.com/calistyle/generator-treefrog/blob/master/.github/ROADMAP.md) to see the direction we are heading.
+We have a Trail Map (Road Map) Please check out our [Trail Map](https://github.com/CaliStyle/generator-treefrog/blob/master/ROADMAP.md) to see the direction we are heading.
 
 ## Contributing
 We love contributions! Please check out our [Contributor's Guide](https://github.com/trailsjs/trails/blob/master/.github/CONTRIBUTING.md) for more
