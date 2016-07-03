@@ -7,8 +7,10 @@
  */
 
 module.exports = {
-	taskmanager: '<%= answers.taskmanager %>',
-	javascript: '<%= answers.javascript || "es6" %>',
-	frontend: '<%= answers.frontend %>',
-	style: '<%= answers.style %>'
+  taskmanager: '<%= answers.taskmanager %>',
+  javascript: '<%= answers.javascript || "es6" %>',
+  frontend: '<%= answers.frontend %>',
+  style: '<%= answers.style %>',
+  srcDir: '<%= answers.srcDir %>',
+  outDir: '<%= answers.outDir %>'
 }
