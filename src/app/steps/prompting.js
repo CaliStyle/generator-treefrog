@@ -6,12 +6,24 @@
 import questions from '../questions';
 
 export default {
-  askModel () {
+  askWebServer: function () {
     let done = this.async()
-    this.prompt(questions, answers => {
-      this.answers = Object.assign(this.answers || {}, answers);
-      done();
-    });
+    if (this.options.trailpacks) {
+      done()
+    }
+    else {
+      this.prompt(questions, answers => {
+        this.answers = Object.assign(this.answers || {}, answers)
+        done()
+      })
+    }
   }
+  // askModel () {
+  //   let done = this.async()
+  //   this.prompt(questions, answers => {
+  //     this.answers = Object.assign(this.answers || {}, answers);
+  //     done();
+  //   });
+  // }
 };
 

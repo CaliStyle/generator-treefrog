@@ -41,20 +41,20 @@ export default {
         callback: _onUpdateNotifier.bind(this, this.async())
       });
     }
-  },
-
-  checkTrailpack: function() {
-    this.appPkg = {};
-    this.appConfigMain = {};
-
-    if (!this.options['skip-install']) {
-      this.log(chalk.yellow('Checking if trailpack-treefrog is installed...')); 
-      this.appPkg = require(path.resolve(this.destinationPath(),'package.json'));
-      this.appConfigMain = require(path.resolve(this.destinationPath(),'config/main.js'));
-
-      if(!this.appPkg.dependencies['trailpack-treefrog']){
-        this.log(chalk.red('trailpack-treefrog not installed.') + ' Run '+ chalk.blue('npm install trailpack-treefrog --save'));
-      }
-    }
   }
+
+  // checkTrailpack: function() {
+  //   this.appPkg = {};
+  //   this.appConfigMain = {};
+
+  //   if (!this.options['skip-install']) {
+  //     this.log(chalk.yellow('Checking if trailpack-treefrog is installed...')); 
+  //     this.appPkg = require(path.resolve(this.destinationPath(),'package.json'));
+  //     this.appConfigMain = require(path.resolve(this.destinationPath(),'config/main.js'));
+
+  //     if(!this.appPkg.dependencies['trailpack-treefrog']){
+  //       this.log(chalk.red('trailpack-treefrog not installed.') + ' Run '+ chalk.blue('npm install trailpack-treefrog --save'));
+  //     }
+  //   }
+  // }
 }
