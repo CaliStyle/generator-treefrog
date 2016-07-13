@@ -78,6 +78,9 @@ export default {
       }
     }
 
+    // Add Treefrog
+    npmTrailpacks.push('trailpack-treefrog@latest')
+
     this.npmInstall(npmTrailpacks, {
       save: true,
       silent: true,
@@ -98,34 +101,34 @@ export default {
       }.bind(this))
     })
   },
-  config() {
+  // config() {
     
-    Util.patchConflicter()
+  //   Util.patchConflicter()
 
-    let name = `treefrog`
-    let fileName = `treefrog`
-    let packName = `trailpack-treefrog`
-    let indexPath = this.destinationPath(DESTINATION_CONFIG_INDEX)
+  //   let name = `treefrog`
+  //   let fileName = `treefrog`
+  //   // let packName = `trailpack-treefrog`
+  //   let indexPath = this.destinationPath(DESTINATION_CONFIG_INDEX)
 
-    //create template file `config/treefrog.js`
-    this.template(SOURCE_CONFIG, DESTINATION_CONFIG(name), {name, fileName, answers: this.answers});
+  //   //create template file `config/treefrog.js`
+  //   this.template(SOURCE_CONFIG, DESTINATION_CONFIG(name), {name, fileName, answers: this.answers});
 
-    //create or update `config/index.js`
-    if (!this.fs.exists(this.destinationPath(DESTINATION_CONFIG_INDEX))) {
-      return this.fs.write(this.destinationPath(DESTINATION_CONFIG_INDEX), Util.getRequireStatement(fileName))
-    }
+  //   //create or update `config/index.js`
+  //   if (!this.fs.exists(this.destinationPath(DESTINATION_CONFIG_INDEX))) {
+  //     return this.fs.write(this.destinationPath(DESTINATION_CONFIG_INDEX), Util.getRequireStatement(fileName))
+  //   }
 
-    if (Util.hasRequireStatement(fileName, this.fs.read(indexPath))) {
-      this.log.identical(DESTINATION_CONFIG_INDEX);
-      return
-    }
+  //   if (Util.hasRequireStatement(fileName, this.fs.read(indexPath))) {
+  //     this.log.identical(DESTINATION_CONFIG_INDEX);
+  //     return
+  //   }
     
-    let indexContents = this.fs.read(indexPath)
-    let updatedIndexFile = Util.getUpdatedIndexFile(fileName, indexContents)
+  //   let indexContents = this.fs.read(indexPath)
+  //   let updatedIndexFile = Util.getUpdatedIndexFile(fileName, indexContents)
 
-    this.fs.write(indexPath, updatedIndexFile)
+  //   this.fs.write(indexPath, updatedIndexFile)
 
-  },
+  // },
 
   root() {
     this.fs.copy(path.resolve(TRAILS_TEMPLATE, 'index.js'), this.destinationPath('index.js'))

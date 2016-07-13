@@ -1,11 +1,17 @@
 import path from 'path';
-import { assert, test } from 'yeoman-generator';
+import assert from 'yeoman-assert'
+import test from 'yeoman-test'
+import TrailsApp from 'trails'
 
 describe('treefrog:app', () => {
-  describe('Should create treefrog from trails/archetype', () => {
+  describe('Should create treefrog from trails/archetype and treefrog/archetype', () => {
+    let tmpDir
     before(done => {
-      test
+      return test
         .run(path.join(__dirname, '..', '..', 'src', 'app'))
+        .inTmpDir(dir => {
+          tmpDir = dir
+        })
         .withPrompts({
           'web-engine': 'express',
           'orm-engine': 'waterline',
@@ -24,14 +30,14 @@ describe('treefrog:app', () => {
           'skip-update': true,
           'skip-intall': true
         })
-        .on('end', done)
-    });
+        .toPromise()
+    })
 
-    it('Should properly create root files', () => {
+    it('Should properly create source folder', () => {
       assert.file([
         'src'
-      ]);
-    });
+      ])
+    })
 
     it('Should properly create config files', () => {
       assert.file([
@@ -60,16 +66,28 @@ describe('treefrog:app', () => {
         'config/env/index.js',
         'package.json',
         'LICENSE'
-      ]);
-    });
+      ])
+    })
     
     it('should set correct treefrog.js file', () => {
       assert.fileContent([
         ['config/treefrog.js', /taskmanager: \'gulp\'/],
         ['config/treefrog.js', /javascript: \'typescript\'/],
         ['config/treefrog.js', /frontend: \'angular\'/],
-        ['config/treefrog.js', /style: \'treefrog\'/]
+        ['config/treefrog.js', /style: \'treefrog\'/],
+        ['config/treefrog.js', /srcDir: \'src\'/],
+        ['config/treefrog.js', /outDir: \'dist\'/]
       ])
+    })
+
+    it('Should properly start', done => {
+      const trailsApp = new TrailsApp(require(tmpDir))
+      const stop = () => {
+        return trailsApp.stop().then(_ => {
+          done()
+        }).catch(done)
+      }
+      trailsApp.start().then(stop).catch(stop)
     })
 
     // it('should see Treefrog in index.js', () => {
