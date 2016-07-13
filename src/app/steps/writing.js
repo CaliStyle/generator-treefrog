@@ -81,7 +81,7 @@ export default {
 
   },
 
-  //  frontend
+  // frontend
   react() {
 
   },
@@ -91,6 +91,10 @@ export default {
   },
 
   // style
+  treefrog() {
+
+  },
+
   foundation() {
 
   },

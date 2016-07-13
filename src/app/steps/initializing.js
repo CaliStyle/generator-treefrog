@@ -28,9 +28,9 @@ export default {
   },
 
   sayHello: function () {
-    this.log('==========================================');
-    this.log('Get ready to hop on a new ' + chalk.green('Treefrog module') + '!');
-    this.log('==========================================');
+    this.log('=======================================');
+    this.log('Get ready to hop on a new ' + chalk.green('Treefrog app') + '!');
+    this.log('=======================================');
   },
 
   checkUpdates: function () {

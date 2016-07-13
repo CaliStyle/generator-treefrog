@@ -35,12 +35,12 @@ exports.default = [
   type: 'list',
   name: 'style',
   message: 'App Style Framework',
-  default: 'foundation',
-  choices: ['bootstrap (not yet supported)', 'foundation', 'other (not yet supported)', 'none (not yet supported)']
+  default: 'treefrog',
+  choices: ['treefrog','bootstrap (not yet supported)', 'foundation (not yet supported)', 'other (not yet supported)', 'none (not yet supported)']
 }, {
   type: 'list',
   when: function when(responses) {
-    return responses['style'] == 'foundation-apps';
+    return responses['style'] == 'foundation';
   },
   name: 'foundation-version',
   message: 'What foundation version do you want to use?',
@@ -50,7 +50,7 @@ exports.default = [
   when: function when(responses) {
     return responses['style'] == 'other';
   },
-  name: 'style-other',
+  name: 'style',
   message: 'What is the name of this frontend?'
 },
 
