@@ -1,11 +1,10 @@
 'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-//Questions
-exports.default = [
+import trailsQuestions from 'generator-trails/generators/app/questions'
+ 
+const questions = trailsQuestions.concat(
+//Treefrog Questions
+[
 // frontend
 {
   type: 'list',
@@ -17,7 +16,7 @@ exports.default = [
   when: function when(responses) {
     return responses['frontend'] == 'other';
   },
-  name: 'frontend-other',
+  name: 'frontend',
   message: 'What is the name of this frontend?'
 }, {
   type: 'list',
@@ -35,12 +34,12 @@ exports.default = [
   type: 'list',
   name: 'style',
   message: 'App Style Framework',
-  default: 'foundation',
-  choices: ['bootstrap (not yet supported)', 'foundation', 'other (not yet supported)', 'none (not yet supported)']
+  default: 'treefrog',
+  choices: ['treefrog','bootstrap (not yet supported)', 'foundation (not yet supported)', 'other (not yet supported)', 'none (not yet supported)']
 }, {
   type: 'list',
   when: function when(responses) {
-    return responses['style'] == 'foundation-apps';
+    return responses['style'] == 'foundation';
   },
   name: 'foundation-version',
   message: 'What foundation version do you want to use?',
@@ -50,7 +49,7 @@ exports.default = [
   when: function when(responses) {
     return responses['style'] == 'other';
   },
-  name: 'style-other',
+  name: 'style',
   message: 'What is the name of this frontend?'
 },
 
@@ -78,7 +77,7 @@ exports.default = [
   choices: ['app', 'src', 'other']
 }, {
   when: function when(responses) {
-    return responses['srcDir'] == 'other';
+    return responses['srcDir'] == 'other'
   },
   name: 'srcDir',
   message: 'What is the name of the Source Directory?'
@@ -93,9 +92,10 @@ exports.default = [
   choices: ['dist', '.tmp', 'other']
 }, {
   when: function when(responses) {
-    return responses['outDir'] == 'other';
+    return responses['outDir'] == 'other'
   },
   name: 'outDir',
   message: 'What is the name of the Output Directory?'
-}];
-module.exports = exports['default'];
+}])
+
+export default questions

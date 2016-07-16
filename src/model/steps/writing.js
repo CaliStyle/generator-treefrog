@@ -3,7 +3,7 @@
  * Where you write the generator specific files (routes, controllers, etc)
  */
 
-import Util from '../../app/util'
+import {util as Util} from '@trails/generator-util'
 
 const SOURCE_MODEL = `Model.js`;
 const SOURCE_MODEL_TEST = `Model.test.js`;

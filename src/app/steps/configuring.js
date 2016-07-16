@@ -4,5 +4,5 @@
  */
 
 export default function () {
-  this.options.subgenerators = { }
+  // this.options.subgenerators = { }
 };

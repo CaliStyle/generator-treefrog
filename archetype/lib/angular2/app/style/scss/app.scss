@@ -1,0 +1,18 @@
+
+// CORE STYLE LINKER SCSS //
+
+// Make sure the charset is set appropriately
+@charset "UTF-8";
+
+// App Base Config
+@import "app/base";
+// CORE STYLE SCSS LINKER END //
+
+// STYLE SCSS LINKER //
+@import "app/layouts";
+@import "app/pages";
+@import "app/interfaces";
+@import "app/directives";
+@import "app/components";
+@import "app/themes";
+// STYLE SCSS LINKER END //

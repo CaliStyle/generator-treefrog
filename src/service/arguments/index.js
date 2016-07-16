@@ -14,10 +14,9 @@
  * };
  */
 
-export default {
-  'service-name': {
-    required: false,
-    type: String,
-    defaults: ''
-  }
-};
+import {extend} from 'lodash' 
+import trailsArguments from 'generator-trails/generators/service/arguments'
+ 
+export default extend(trailsArguments, {
+
+})

@@ -13,10 +13,9 @@
  *   }
  * };
  */
+import {extend} from 'lodash' 
+import trailsArguments from 'generator-trails/generators/model/arguments'
+ 
+export default extend(trailsArguments, {
 
-export default {
-  'model-name': {
-    required: true,
-    type: String
-  }
-};
+})

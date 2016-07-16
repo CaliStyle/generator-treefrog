@@ -14,11 +14,9 @@
  * };
  */
 
-export default {
-  'controller-name': {
-    type: String,
-    required: true,
-    desc: 'Controller Name',
-    banner: 'Controller Name'
-  }
-};
+import {extend} from 'lodash' 
+import trailsArguments from 'generator-trails/generators/controller/arguments'
+ 
+export default extend(trailsArguments, {
+
+})

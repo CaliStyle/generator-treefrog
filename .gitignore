@@ -1,4 +1,5 @@
-/.idea
+/.tmp
+*.sw*
 # Logs
 logs
 *.log
@@ -12,8 +13,6 @@ pids
 lib-cov
 
 # Coverage directory used by tools like istanbul
-/coverage
-/generators
 coverage
 
 # Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
@@ -26,5 +25,16 @@ coverage
 build/Release
 
 # Dependency directory
-# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
+
+# Babel compiled generators
+generators
+
+# Miscellaneous
+*~
+*#
+.DS_STORE
+.netbeans
+nbproject
+.idea
+.node_history

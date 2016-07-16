@@ -25,6 +25,12 @@
     "name": "Scott Wyatt",
     "email": "scottwyatt86@gmail.com"
   },
+  "contributors": [
+    {
+      "name": "Jimmy Aumard",
+      "url": "https://github.com/jaumard"
+    }
+  ],
   "scripts": {
     "clean": "rm -rf ./generators",
     "compile": "npm run clean && cp -r src/ generators/ && babel src --out-dir generators --ignore **/templates/**",
@@ -41,11 +47,12 @@
   },
   "dependencies": {
     "@trails/generator-node": "^1.11",
+    "@trails/generator-util": "^0.0.2",
     "chalk": "1.1.1",
     "detect-conflict": "^1.0.0",
     "falafel": "^1.2.0",
+    "generator-trails": "^1.0.11",
     "lodash": "^4.0.0",
-    "mkdirp": "^0.5.1",
     "path-exists": "^2.0.0",
     "print-message": "1.4.0",
     "trailpack": "^1.0.0",
@@ -69,7 +76,10 @@
     "cz-conventional-changelog": "1.1.4",
     "isparta": "4.0.0",
     "mocha": "2.5.3",
-    "semantic-release": "4.3.5"
+    "semantic-release": "4.3.5",
+    "jju": "^1.2.0",
+    "semver": "^4.3.6",
+    "semver-set": "^0.1.1"
   },
   "eslintConfig": {
     "extends": "trails",
@@ -79,5 +89,11 @@
     "rules": {
       "nomen": 0
     }
+  },
+  "publishConfig": {
+    "tag": "latest"
+  },
+  "release": {
+    "branch": "master"
   }
 }
