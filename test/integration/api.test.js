@@ -2,7 +2,7 @@ import path from 'path'
 import assert from 'yeoman-assert'
 import test from 'yeoman-test'
 
-describe('trails:api', () => {
+describe('treefrog:api', () => {
   describe('Should properly generate api interface', () => {
     describe('Should properly generate model interface', () => {
       before(done => {

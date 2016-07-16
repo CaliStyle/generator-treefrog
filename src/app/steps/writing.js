@@ -1,17 +1,18 @@
+/* eslint no-console: [0, { allow: ["log","warn", "error"] }] */
 /**
  * Step 5
  * Where you write the generator specific files (routes, controllers, etc)
  */
 
-import fs from 'fs-extra'
+import fs from 'fs'
 import path from 'path'
 import {util as Util} from '@trails/generator-util'
 import chalk from 'chalk'
 import falafel from 'falafel'
-import _ from 'lodash'
+import merge from '../../../lib/package-merge'
 
 const TRAILS_TEMPLATE = path.dirname(require.resolve('trails/archetype'))
-const TREEFROG_TEMPLATE = path.dirname('../../../archetype')
+const TREEFROG_TEMPLATE = path.dirname(require.resolve('../../../archetype'))
 
 const mkdirp = require('mkdirp');
 
@@ -133,6 +134,7 @@ export default {
   root() {
     this.fs.copy(path.resolve(TRAILS_TEMPLATE, 'index.js'), this.destinationPath('index.js'))
     this.fs.copy(path.resolve(TRIALS_TEMPLATE, 'api/index.js'), this.destinationPath('api/index.js'))
+    //this.fs.copy(path.resolve(TRIALS_TEMPLATE, 'server.js'), this.destinationPath('server.js'))
     this.fs.copy(path.resolve(TREEFROG_TEMPLATE, 'server.js'), this.destinationPath('server.js'))
     // this.fs.copy(path.resolve(TREEFROG_TEMPLATE, 'app'), this.destinationPath(self.answers.srcDir))
     
@@ -154,60 +156,87 @@ export default {
 
   // javascript
   typescript() {
+    if (this.options['javascript'] == 'typescript') {
 
+    }
   },
 
   es6() {
+    if (this.options['javascript'] == 'es6') {
 
+    }
   },
 
-  es5() {
+  vanilla() {
+    if (this.options['javascript'] == 'vanilla') {
 
+    }
   },
 
   // frontend
   react() {
+    if (this.options['frontend'] == 'react') {
 
+    }
   },
 
   angular() {
-
+    if (this.options['frontend'] == 'angular') {
+      if (this.options['angular-version'] == '2'){
+        this.fs.copy(path.resolve(TREEFROG_TEMPLATE, 'lib/angular2/app', '**'), this.destinationPath(this.options['srcDir']))
+      }
+    }
   },
 
   // style
   treefrog() {
+    if (this.options['style'] == 'treefrog') {
 
+    }
   },
 
   foundation() {
+    if (this.options['style'] == 'foundation') {
 
+    }
   },
 
   bootstrap() {
+    if (this.options['style'] == 'bootstrap') {
 
+    }
   },
 
   // taskmanager
   gulp() {
-
+    if (this.options['taskmanager'] == 'gulp') {
+      this.fs.copy(path.resolve(TREEFROG_TEMPLATE, 'lib/gulp/gulpfile.js'), this.destinationPath('gulpfile.js'))
+    }
   },
 
   webpack() {
+    if (this.options['taskmanager'] == 'webpack') {
 
+    }
   },
 
   grunt() {
+    if (this.options['taskmanager'] == 'grunt') {
 
+    }
   },
 
   // Install Selected Packages
   pkg()
   {
+    const trailsPackage = require(path.resolve(TRAILS_TEMPLATE, 'package.json'))
+    const treefrogPackage = require(path.resolve(TREEFROG_TEMPLATE, 'package.json'))
+    const pkg = merge(trailsPackage, treefrogPackage)
+
+    console.log(pkg)
     // node:app generator will merge into this
     if (!this.options['skip-install']) {
-      const trailsPackage = require(path.resolve(TRAILS_TEMPLATE, 'package.json'))
-      const treefrogPackage = require(path.resolve(TREEFROG_TEMPLATE, 'package.json'))
-      const pkg = _.merge(trailsPackage, treefrogPackage)
+      
 
       this.fs.writeJSON(this.destinationPath('package.json'), pkg)
     }

@@ -2,7 +2,7 @@ import path from 'path'
 import assert from 'yeoman-assert'
 import test from 'yeoman-test'
 
-describe('trails:policy', () => {
+describe('treefrog:policy', () => {
   describe('Should properly generate policy interface', () => {
     before(() => {
       return test

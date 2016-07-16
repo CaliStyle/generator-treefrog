@@ -3,7 +3,8 @@
  * Where you prompt users for options (where you'd call this.prompt()).
  */
 
-import questions from '../questions';
+import chalk from 'chalk'
+import questions from '../questions'
 
 export default {
   askWebServer: function () {
@@ -18,6 +19,7 @@ export default {
       })
     }
   }
+
   // askModel () {
   //   let done = this.async()
   //   this.prompt(questions, answers => {
@@ -25,5 +27,5 @@ export default {
   //     done();
   //   });
   // }
-};
+}
 

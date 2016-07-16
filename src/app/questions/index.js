@@ -90,7 +90,7 @@ export default [
   when: function when(responses) {
     return responses['frontend'] == 'other';
   },
-  name: 'frontend-other',
+  name: 'frontend',
   message: 'What is the name of this frontend?'
 }, {
   type: 'list',

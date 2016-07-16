@@ -2,25 +2,25 @@ import path from 'path'
 import assert from 'yeoman-assert'
 import test from 'yeoman-test'
 
-describe('trails:model', () => {
-  describe('Should properly generate model interface', () => {
+describe('treefrog:service', () => {
+  describe('Should properly generate service interface', () => {
     before(() => {
       return test
-        .run(path.join(__dirname, '../../src/model'))
+        .run(path.join(__dirname, '../../src/service'))
         .withArguments(['test'])
         .toPromise()
     })
 
-    it('Should properly create model files', () => {
+    it('Should properly create service files', () => {
       assert.file([
-        'api/models/Test.js'
+        'api/services/TestService.js'
       ])
 
     })
 
     it('Should properly create test files', () => {
       assert.file([
-        'test/unit/models/Test.test.js'
+        'test/unit/services/TestService.test.js'
       ])
 
     })

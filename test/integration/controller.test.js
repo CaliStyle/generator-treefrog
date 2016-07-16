@@ -2,7 +2,7 @@ import path from 'path'
 import assert from 'yeoman-assert'
 import test from 'yeoman-test'
 
-describe('trails:controller', () => {
+describe('treefrog:controller', () => {
   describe('Should properly generate controller interface', () => {
     before(() => {
       return test

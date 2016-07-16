@@ -2,7 +2,7 @@
 // import assert from 'yeoman-assert'
 // import test from 'yeoman-test'
 
-// describe('trails:trailpack', () => {
+// describe('treefrog:trailpack', () => {
 //   describe('Should properly install trailpack and his archetype', () => {
 //     before(() => {
 //       return test
