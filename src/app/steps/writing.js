@@ -134,70 +134,6 @@ export default {
 
     this.fs.write(indexPath, updatedIndexFile)
 
-    // // javascript
-
-    // if (this.options['javascript'] == 'typescript') {
-    //   console.log('Writing typescript')
-    // }
-
-    // if (this.options['javascript'] == 'es6') {
-    //   console.log('Writing es6')
-    // }
-
-    // if (this.options['javascript'] == 'vanilla') {
-    //   console.log('Writing vanilla')
-    // }
-
-    // // frontend
-    // if (this.options['frontend'] == 'react') {
-    //   console.log('Writing react')
-    // }
-
-    // if (this.options['frontend'] == 'angular') {
-    //   if (this.options['angular-version'] == '2'){
-    //     console.log('Writing angular2')
-    //     // Copy Folder
-    //     this.fs.copy(path.resolve(TREEFROG_TEMPLATE, 'lib/angular2/app', '**'), this.destinationPath(this.options['srcDir']))
-
-    //     // Add to Package
-    //     const angular2Package = require(path.resolve(TREEFROG_TEMPLATE, 'lib/angular2/package.json'))
-    //     pkg = merge(pkg, angular2Package)
-    //   }
-    // }
-
-    // // style
-    // if (this.options['style'] == 'treefrog') {
-    //   console.log('Writing treefrog')
-    //   // Add to Package
-    //   const treefrogPackage = require(path.resolve(TREEFROG_TEMPLATE, 'lib/treefrog/package.json'))
-    //   pkg = merge(pkg, treefrogPackage)
-    // }
-    // if (this.options['style'] == 'foundation') {
-    //   console.log('Writing foundation')
-    // }
-
-    // if (this.options['style'] == 'bootstrap') {
-
-    // }
-
-
-    // // taskmanager
-    // if (this.options['taskmanager'] == 'gulp') {
-    //   console.log('Writing gulp')
-    //   this.fs.copy(path.resolve(TREEFROG_TEMPLATE, 'lib/gulp/gulpfile.js'), this.destinationPath('gulpfile.js'))
-      
-    //   // Add to Package
-    //   const gulpPackage = require(path.resolve(TREEFROG_TEMPLATE, 'lib/gulp/package.json'))
-    //   pkg = merge(pkg, gulpPackage)
-    // }
-
-    // if (this.options['taskmanager'] == 'webpack') {
-    //   console.log('Writing webpack')
-    // }
-
-    // if (this.options['taskmanager'] == 'grunt') {
-    //   console.log('Writing grunt')
-    // }
   },
 
   root() {
@@ -209,33 +145,36 @@ export default {
   // javascript
   typescript() {
     if (this.answers['javascript'] == 'typescript') {
-      console.log('Writing typescript')
+      // console.log('Writing typescript')
     }
   },
 
   es6() {
     if (this.answers['javascript'] == 'es6') {
-      console.log('Writing es6')
+      // console.log('Writing es6')
     }
   },
 
   vanilla() {
     if (this.answers['javascript'] == 'vanilla') {
-      console.log('Writing vanilla')
+      // console.log('Writing vanilla')
     }
   },
 
   // frontend
   react() {
     if (this.answers['frontend'] == 'react') {
-      console.log('Writing react')
+      // console.log('Writing react')
     }
   },
 
   angular() {
     if (this.answers['frontend'] == 'angular') {
+      if (this.answers['angular-version'] == '1'){
+        // console.log('Writing angular')
+      }
       if (this.answers['angular-version'] == '2'){
-        console.log('Writing angular2')
+        // console.log('Writing angular2')
         // Copy Folder
         this.fs.copy(path.resolve(TREEFROG_TEMPLATE, 'lib/angular2/app', '**'), this.destinationPath(this.answers['srcDir']))
 
@@ -271,7 +210,7 @@ export default {
   // taskmanager
   gulp() {
     if (this.answers['taskmanager'] == 'gulp') {
-      console.log('Writing gulp')
+      // console.log('Writing gulp')
       this.fs.copy(path.resolve(TREEFROG_TEMPLATE, 'lib/gulp/gulpfile.js'), this.destinationPath('gulpfile.js'))
       
       // Add to Package
@@ -282,20 +221,19 @@ export default {
 
   webpack() {
     if (this.answers['taskmanager'] == 'webpack') {
-      console.log('Writing webpack')
+      // console.log('Writing webpack')
     }
   },
 
   grunt() {
     if (this.answers['taskmanager'] == 'grunt') {
-      console.log('Writing grunt')
+      // console.log('Writing grunt')
     }
   },
 
   // Install Selected Packages
   pkg() {
 
-    console.log(JSON.parse(pkg))
     // node:app generator will merge into this
     if (!this.options['skip-install']) {
       this.fs.writeJSON(this.destinationPath('package.json'), JSON.parse(pkg))
