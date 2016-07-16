@@ -15,5 +15,5 @@
     "gulp-tslint": "^5.0.0",
     "gulp-typescript": "^2.13.6",
     "gulp-watch": "^4.3.6"
-  },
+  }
 }

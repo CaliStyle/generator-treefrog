@@ -39,7 +39,14 @@ describe('treefrog:lib', () => {
       ))
       expect(result.dependencies).to.have.property('express', '^5.0.0')
     })
+    it('should accept object literal for argument "dst"', function() {
+      const result = JSON.parse(merge(
+        { dependencies: { foo: '^42.0.0' } },
+        fixture('complete')
+      ))
 
+      expect(result.dependencies).to.have.property('foo', '^42.0.0');
+    })
     it('should accept object literal for argument "src"', function() {
       const result = JSON.parse(merge(
         fixture('complete'),

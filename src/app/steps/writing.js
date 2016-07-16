@@ -22,6 +22,10 @@ const DESTINATION_CONFIG = name => `config/${name}.js`;
 
 const DESTINATION_CONFIG_MAIN = 'config/main.js';
 
+const trailsPackage = require(path.resolve(TRAILS_TEMPLATE, 'package.json'))
+const treefrogPackage = require(path.resolve(TREEFROG_TEMPLATE, 'package.json'))
+let pkg = merge(trailsPackage, treefrogPackage)
+
 export default {
   genericApi () {
     this.fs.copy(path.resolve(TRAILS_TEMPLATE, 'api/services', '**'), this.destinationPath('api/services'))
@@ -183,7 +187,12 @@ export default {
   angular() {
     if (this.options['frontend'] == 'angular') {
       if (this.options['angular-version'] == '2'){
+        // Copy Folder
         this.fs.copy(path.resolve(TREEFROG_TEMPLATE, 'lib/angular2/app', '**'), this.destinationPath(this.options['srcDir']))
+
+        // Add to Package
+        const angular2Package = require(path.resolve(TREEFROG_TEMPLATE, 'lib/angular2/package.json'))
+        pkg = merge(pkg, angular2Package)
       }
     }
   },
@@ -192,6 +201,9 @@ export default {
   treefrog() {
     if (this.options['style'] == 'treefrog') {
 
+      // Add to Package
+      const treefrogPackage = require(path.resolve(TREEFROG_TEMPLATE, 'lib/treefrog/package.json'))
+      pkg = merge(pkg, treefrogPackage)
     }
   },
 
@@ -211,6 +223,10 @@ export default {
   gulp() {
     if (this.options['taskmanager'] == 'gulp') {
       this.fs.copy(path.resolve(TREEFROG_TEMPLATE, 'lib/gulp/gulpfile.js'), this.destinationPath('gulpfile.js'))
+      
+      // Add to Package
+      const gulpPackage = require(path.resolve(TREEFROG_TEMPLATE, 'lib/gulp/package.json'))
+      pkg = merge(pkg, gulpPackage)
     }
   },
 
@@ -227,17 +243,11 @@ export default {
   },
 
   // Install Selected Packages
-  pkg()
-  {
-    const trailsPackage = require(path.resolve(TRAILS_TEMPLATE, 'package.json'))
-    const treefrogPackage = require(path.resolve(TREEFROG_TEMPLATE, 'package.json'))
-    const pkg = merge(trailsPackage, treefrogPackage)
+  pkg() {
 
     console.log(pkg)
     // node:app generator will merge into this
     if (!this.options['skip-install']) {
-      
-
       this.fs.writeJSON(this.destinationPath('package.json'), pkg)
     }
   }
