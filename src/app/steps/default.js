@@ -16,4 +16,4 @@ this.composeWith('node:app', {
     },
     {local: require.resolve('@trails/generator-node/generators/app')}
   )
-};
+}

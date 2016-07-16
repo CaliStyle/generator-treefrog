@@ -1,7 +1,7 @@
 ./test/**/*.test.js
 --reporter spec
 --recursive
---timeout 300000
+--timeout 30000
 --full-trace
 --slow 50
 --no-exit

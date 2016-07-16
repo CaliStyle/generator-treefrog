@@ -76,8 +76,11 @@ function combine(dst, src) {
  * @returns {String} Result of merging src into dst.
  */
 function merge(dst, src) {
+  if (isPlainObject(dst)) {
+    dst = JSON.stringify(dst, null, 2)
+  }
   if (isObject(dst)) {
-    dst = JSON.stringify(dst)
+    dst = JSON.parse(dst)
   }
   if (!isString(dst)) {
     dst = dst.toString()
@@ -85,7 +88,6 @@ function merge(dst, src) {
   if (isString(src) || isBuffer(src)) {
     src = json.parse(src.toString())
   }
-
   return json.update(dst, combine(json.parse(dst), src), { })
 }
 

@@ -13,5 +13,5 @@ export default function () {
     `To start your application, run: ${chalk.red('npm start')}`
   ], {
     printFn: this.log
-  });
-};
+  })
+}

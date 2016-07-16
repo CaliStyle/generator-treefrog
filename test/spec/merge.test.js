@@ -46,14 +46,15 @@ describe('treefrog:lib', () => {
       ))
 
       expect(result.dependencies).to.have.property('foo', '^42.0.0');
+      expect(result).to.have.property('version', '10.3.1');
     })
     it('should accept object literal for argument "src"', function() {
       const result = JSON.parse(merge(
         fixture('complete'),
         { dependencies: { foo: '^42.0.0' } }
       ))
-
       expect(result.dependencies).to.have.property('foo', '^42.0.0');
+      expect(result).to.have.property('version', '10.3.1');
     })
   })
 })
