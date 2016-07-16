@@ -10,11 +10,19 @@
  * }];
  */
 
-export default [
-  {
-    type: 'input',
-    name: 'desc',
-    message: 'Service Description',
-    default: 'TODO document Service'
-  }
-];
+import trailsQuestions from 'generator-trails/generators/service/questions'
+ 
+const questions = trailsQuestions.concat([
+
+])
+
+export default questions
+
+// [
+//   {
+//     type: 'input',
+//     name: 'desc',
+//     message: 'Service Description',
+//     default: 'TODO document Service'
+//   }
+// ]

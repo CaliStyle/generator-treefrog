@@ -10,11 +10,18 @@
  * }];
  */
 
-export default [
-  {
-    type: 'input',
-    name: 'desc',
-    message: 'Policy Description',
-    default: 'TODO document Policy'
-  }
-];
+import trailsQuestions from 'generator-trails/generators/policy/questions'
+ 
+const questions = trailsQuestions.concat([
+
+])
+
+export default questions
+// [
+//   {
+//     type: 'input',
+//     name: 'desc',
+//     message: 'Policy Description',
+//     default: 'TODO document Policy'
+//   }
+// ]

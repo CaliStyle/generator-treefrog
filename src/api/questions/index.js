@@ -10,4 +10,10 @@
  * }];
  */
 
-export default [];
+import trailsQuestions from 'generator-trails/generators/api/questions'
+ 
+const questions = trailsQuestions.concat([
+
+])
+
+export default questions
