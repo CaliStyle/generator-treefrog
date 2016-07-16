@@ -13,11 +13,9 @@
  * };
  */
 
-export default {
-  'skip-install': {
-    desc: 'Do not automatically install dependencies',
-    type: Boolean,
-    defaults: false,
-    hide: false
-  }
-};
+import {extend} from 'lodash' 
+import trailsOptions from 'generator-trails/generators/policy/options'
+ 
+export default extend(trailsOptions, {
+
+})

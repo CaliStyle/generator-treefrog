@@ -13,10 +13,9 @@
  *   }
  * };
  */
+import {extend} from 'lodash' 
+import trailsArguments from 'generator-trails/generators/policy/arguments'
+ 
+export default extend(trailsArguments, {
 
-export default {
-  'policy-name': {
-    required: true,
-    type: String
-  }
-};
+})

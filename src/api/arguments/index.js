@@ -14,11 +14,9 @@
  * };
  */
 
-export default {
-  'api-name': {
-    type: String,
-    required: true,
-    desc: 'Api Name',
-    banner: 'Api Name'
-  }
-};
+import {extend} from 'lodash' 
+import trailsArguments from 'generator-trails/generators/api/arguments'
+ 
+export default extend(trailsArguments, {
+
+})

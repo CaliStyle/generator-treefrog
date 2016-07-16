@@ -13,4 +13,9 @@
  * };
  */
 
-export default {};
+import {extend} from 'lodash' 
+import trailsOptions from 'generator-trails/generators/controller/options'
+ 
+export default extend(trailsOptions, {
+
+})

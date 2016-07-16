@@ -188,7 +188,7 @@ export default {
   // style
   treefrog() {
     if (this.answers['style'] == 'treefrog') {
-      console.log('Writing treefrog')
+      // console.log('Writing treefrog')
       // Add to Package
       const treefrogPackage = require(path.resolve(TREEFROG_TEMPLATE, 'lib/treefrog/package.json'))
       pkg = merge(pkg, treefrogPackage)
