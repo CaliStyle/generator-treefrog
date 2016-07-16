@@ -10,6 +10,8 @@
 Treefrog Yeoman Generator.
 Treefrog helps interconnect React and Angular frontends with Trails Apps as Isomorphic apps.
 
+Looking for the Style Library?  Visit <https://github.com/CaliStyle/treefrog>.
+
 Looking for the Trailpack?  Visit <https://github.com/CaliStyle/trailpack-treefrog>.
 
 ## Status

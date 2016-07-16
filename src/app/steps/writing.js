@@ -79,7 +79,7 @@ export default {
     }
 
     // Add Treefrog
-    npmTrailpacks.push('trailpack-treefrog@latest')
+    // npmTrailpacks.push('trailpack-treefrog@latest')
 
     this.npmInstall(npmTrailpacks, {
       save: true,
@@ -134,7 +134,7 @@ export default {
     this.fs.copy(path.resolve(TRAILS_TEMPLATE, 'index.js'), this.destinationPath('index.js'))
     this.fs.copy(path.resolve(TRIALS_TEMPLATE, 'api/index.js'), this.destinationPath('api/index.js'))
     this.fs.copy(path.resolve(TREEFROG_TEMPLATE, 'server.js'), this.destinationPath('server.js'))
-    this.fs.copy(path.resolve(TREEFROG_TEMPLATE, 'app'), this.destinationPath(self.answers.srcDir))
+    // this.fs.copy(path.resolve(TREEFROG_TEMPLATE, 'app'), this.destinationPath(self.answers.srcDir))
     
     // //const frontend = this.answers ? this.answers['frontend'] : null
     // const self = this;
@@ -151,19 +151,6 @@ export default {
     // });
 
   },
-
-  pkg()
-  {
-    // node:app generator will merge into this
-    if (!this.options['skip-install']) {
-      const trailsPackage = require(path.resolve(TRAILS_TEMPLATE, 'package.json'))
-      const treefrogPackage = require(path.resolve(TREEFROG_TEMPLATE, 'package.json'))
-      const pkg = _.merge(trailsPackage, treefrogPackage)
-
-      this.fs.writeJSON(this.destinationPath('package.json'), pkg)
-    }
-  },
-
 
   // javascript
   typescript() {
@@ -211,6 +198,19 @@ export default {
 
   grunt() {
 
+  },
+
+  // Install Selected Packages
+  pkg()
+  {
+    // node:app generator will merge into this
+    if (!this.options['skip-install']) {
+      const trailsPackage = require(path.resolve(TRAILS_TEMPLATE, 'package.json'))
+      const treefrogPackage = require(path.resolve(TREEFROG_TEMPLATE, 'package.json'))
+      const pkg = _.merge(trailsPackage, treefrogPackage)
+
+      this.fs.writeJSON(this.destinationPath('package.json'), pkg)
+    }
   }
 
 };
