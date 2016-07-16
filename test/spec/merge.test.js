@@ -1,7 +1,7 @@
 
 import fs from 'fs'
 import path from 'path'
-import merge from '../../lib/package-merge'
+import merge from '../../src/lib/package-merge'
 import { expect } from 'chai'
 
 function fixture(name) {

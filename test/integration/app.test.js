@@ -14,6 +14,7 @@ describe('treefrog:app', () => {
         })
         .withPrompts({
           'web-engine': 'express',
+          'express-version': '4',
           'orm-engine': 'waterline',
           'authorName': 'treefrog',
           'authorEmail': 'hello@treefrog.io',
@@ -28,18 +29,19 @@ describe('treefrog:app', () => {
         })
         .withOptions({
           'skip-update': true,
-          'skip-intall': true
+          'skip-intall': false
         })
         .toPromise()
     })
 
-    it('Should properly create source folder', () => {
-      assert.file([
-        'src'
-      ])
-    })
+    // it('Should properly create source folder', () => {
+    //   assert.file([
+    //     'src'
+    //   ])
+    // })
 
     it('Should properly create config files', () => {
+      console.log('CONFIG FILES')
       assert.file([
         '.editorconfig',
         '.gitignore',
@@ -70,6 +72,7 @@ describe('treefrog:app', () => {
     })
     
     it('should set correct treefrog.js file', () => {
+      console.log('CORRECT TREEFROG')
       assert.fileContent([
         ['config/treefrog.js', /taskmanager: \'gulp\'/],
         ['config/treefrog.js', /javascript: \'typescript\'/],
@@ -81,6 +84,7 @@ describe('treefrog:app', () => {
     })
 
     it('Should properly start', done => {
+      console.log('STARTING')
       const trailsApp = new TrailsApp(require(tmpDir))
       const stop = () => {
         return trailsApp.stop().then(_ => {

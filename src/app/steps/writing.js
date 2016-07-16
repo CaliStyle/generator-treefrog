@@ -9,7 +9,7 @@ import path from 'path'
 import {util as Util} from '@trails/generator-util'
 import chalk from 'chalk'
 import falafel from 'falafel'
-import merge from '../../../lib/package-merge'
+import merge from '../../lib/package-merge'
 
 const TRAILS_TEMPLATE = path.dirname(require.resolve('trails/archetype'))
 const TREEFROG_TEMPLATE = path.dirname(require.resolve('../../../archetype'))
@@ -84,7 +84,7 @@ export default {
     }
 
     // Add Treefrog
-    // npmTrailpacks.push('trailpack-treefrog@latest')
+    npmTrailpacks.push('trailpack-treefrog@latest')
 
     this.npmInstall(npmTrailpacks, {
       save: true,
@@ -106,56 +106,40 @@ export default {
       }.bind(this))
     })
   },
-  // config() {
+
+  config() {
     
-  //   Util.patchConflicter()
+    Util.patchConflicter()
 
-  //   let name = `treefrog`
-  //   let fileName = `treefrog`
-  //   // let packName = `trailpack-treefrog`
-  //   let indexPath = this.destinationPath(DESTINATION_CONFIG_INDEX)
+    let name = `treefrog`
+    let fileName = `treefrog`
+    // let packName = `trailpack-treefrog`
+    let indexPath = this.destinationPath(DESTINATION_CONFIG_INDEX)
 
-  //   //create template file `config/treefrog.js`
-  //   this.template(SOURCE_CONFIG, DESTINATION_CONFIG(name), {name, fileName, answers: this.answers});
+    //create template file `config/treefrog.js`
+    this.template(SOURCE_CONFIG, DESTINATION_CONFIG(name), {name, fileName, answers: this.answers});
 
-  //   //create or update `config/index.js`
-  //   if (!this.fs.exists(this.destinationPath(DESTINATION_CONFIG_INDEX))) {
-  //     return this.fs.write(this.destinationPath(DESTINATION_CONFIG_INDEX), Util.getRequireStatement(fileName))
-  //   }
+    //create or update `config/index.js`
+    if (!this.fs.exists(this.destinationPath(DESTINATION_CONFIG_INDEX))) {
+      return this.fs.write(this.destinationPath(DESTINATION_CONFIG_INDEX), Util.getRequireStatement(fileName))
+    }
 
-  //   if (Util.hasRequireStatement(fileName, this.fs.read(indexPath))) {
-  //     this.log.identical(DESTINATION_CONFIG_INDEX);
-  //     return
-  //   }
+    if (Util.hasRequireStatement(fileName, this.fs.read(indexPath))) {
+      this.log.identical(DESTINATION_CONFIG_INDEX);
+      return
+    }
     
-  //   let indexContents = this.fs.read(indexPath)
-  //   let updatedIndexFile = Util.getUpdatedIndexFile(fileName, indexContents)
+    let indexContents = this.fs.read(indexPath)
+    let updatedIndexFile = Util.getUpdatedIndexFile(fileName, indexContents)
 
-  //   this.fs.write(indexPath, updatedIndexFile)
+    this.fs.write(indexPath, updatedIndexFile)
 
-  // },
+  },
 
   root() {
     this.fs.copy(path.resolve(TRAILS_TEMPLATE, 'index.js'), this.destinationPath('index.js'))
-    this.fs.copy(path.resolve(TRIALS_TEMPLATE, 'api/index.js'), this.destinationPath('api/index.js'))
-    //this.fs.copy(path.resolve(TRIALS_TEMPLATE, 'server.js'), this.destinationPath('server.js'))
+    this.fs.copy(path.resolve(TRAILS_TEMPLATE, 'api/index.js'), this.destinationPath('api/index.js'))
     this.fs.copy(path.resolve(TREEFROG_TEMPLATE, 'server.js'), this.destinationPath('server.js'))
-    // this.fs.copy(path.resolve(TREEFROG_TEMPLATE, 'app'), this.destinationPath(self.answers.srcDir))
-    
-    // //const frontend = this.answers ? this.answers['frontend'] : null
-    // const self = this;
-
-    // //this.fs.write(this.destinationPath('config/treefrog.js'), '//Treefrog is awesome')
-
-    // mkdirp(this.destinationPath(self.answers.srcDir), function(err) { 
-    //     // path exists unless there was an error
-    //     if(err){
-    //       self.log(chalk.blue(self.answers.srcDir)+ ' directory already exists or could not create');
-    //     }else{
-    //       self.log(chalk.green(self.answers.srcDir) + ' directory created');
-    //     }
-    // });
-
   },
 
   // javascript
