@@ -14,7 +14,7 @@ import merge from '../../lib/package-merge'
 const TRAILS_TEMPLATE = path.dirname(require.resolve('trails/archetype'))
 const TREEFROG_TEMPLATE = path.dirname(require.resolve('../../../archetype'))
 
-const mkdirp = require('mkdirp');
+// const mkdirp = require('mkdirp');
 
 const SOURCE_CONFIG = 'treefrog.js';
 const DESTINATION_CONFIG_INDEX = 'config/index.js';
