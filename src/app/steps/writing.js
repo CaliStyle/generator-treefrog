@@ -14,7 +14,7 @@ import merge from '../../lib/package-merge'
 const TRAILS_TEMPLATE = path.dirname(require.resolve('trails/archetype'))
 const TREEFROG_TEMPLATE = path.dirname(require.resolve('../../../archetype'))
 
-const mkdirp = require('mkdirp');
+// const mkdirp = require('mkdirp');
 
 const SOURCE_CONFIG = 'treefrog.js';
 const DESTINATION_CONFIG_INDEX = 'config/index.js';
@@ -165,6 +165,12 @@ export default {
   react() {
     if (this.answers['frontend'] == 'react') {
       // console.log('Writing react')
+      // Copy Folder
+      this.fs.copy(path.resolve(TREEFROG_TEMPLATE, 'lib/react/app', '**'), this.destinationPath(this.answers['srcDir']))
+
+      // Add to Package
+      const reactPackage = require(path.resolve(TREEFROG_TEMPLATE, 'lib/react/package.json'))
+      pkg = merge(pkg, reactPackage)
     }
   },
 
@@ -172,6 +178,12 @@ export default {
     if (this.answers['frontend'] == 'angular') {
       if (this.answers['angular-version'] == '1'){
         // console.log('Writing angular')
+        // Copy Folder
+        this.fs.copy(path.resolve(TREEFROG_TEMPLATE, 'lib/angular/app', '**'), this.destinationPath(this.answers['srcDir']))
+
+        // Add to Package
+        const angularPackage = require(path.resolve(TREEFROG_TEMPLATE, 'lib/angular/package.json'))
+        pkg = merge(pkg, angularPackage)
       }
       if (this.answers['angular-version'] == '2'){
         // console.log('Writing angular2')
@@ -198,12 +210,22 @@ export default {
   foundation() {
     if (this.answers['style'] == 'foundation') {
       console.log('Writing foundation')
+      // Copy Folder
+      // this.fs.copy(path.resolve(TREEFROG_TEMPLATE, 'lib/foundation/app', '**'), this.destinationPath(this.answers['srcDir']))
+
+      // Add to Package
+      const foundationPackage = require(path.resolve(TREEFROG_TEMPLATE, 'lib/foundation/package.json'))
+      pkg = merge(pkg, foundationPackage)
     }
   },
 
   bootstrap() {
     if (this.answers['style'] == 'bootstrap') {
+      // this.fs.copy(path.resolve(TREEFROG_TEMPLATE, 'lib/bootstrap/app', '**'), this.destinationPath(this.answers['srcDir']))
 
+      // Add to Package
+      const bootstrapPackage = require(path.resolve(TREEFROG_TEMPLATE, 'lib/bootstrap/package.json'))
+      pkg = merge(pkg, bootstrapPackage)
     }
   },
 
@@ -222,12 +244,18 @@ export default {
   webpack() {
     if (this.answers['taskmanager'] == 'webpack') {
       // console.log('Writing webpack')
+      // Add to Package
+      const webpackPackage = require(path.resolve(TREEFROG_TEMPLATE, 'lib/webpack/package.json'))
+      pkg = merge(pkg, webpackPackage)
     }
   },
 
   grunt() {
     if (this.answers['taskmanager'] == 'grunt') {
       // console.log('Writing grunt')
+      // Add to Package
+      const gruntPackage = require(path.resolve(TREEFROG_TEMPLATE, 'lib/grunt/package.json'))
+      pkg = merge(pkg, gruntPackage)
     }
   },
 
