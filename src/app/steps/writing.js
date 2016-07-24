@@ -146,6 +146,13 @@ export default {
   typescript() {
     if (this.answers['javascript'] == 'typescript') {
       // console.log('Writing typescript')
+      // Copy Files
+      this.fs.copy(path.resolve(TREEFROG_TEMPLATE, 'lib/typescript/tsconfig.json'), this.destinationPath('tsconfig.js'))
+      this.fs.copy(path.resolve(TREEFROG_TEMPLATE, 'lib/typescript/typings.json'), this.destinationPath('typings.js'))
+      
+      // Add to Package
+      const typescriptPackage = require(path.resolve(TREEFROG_TEMPLATE, 'lib/typescript/package.json'))
+      pkg = merge(pkg, typescriptPackage)
     }
   },
 
@@ -244,6 +251,7 @@ export default {
   webpack() {
     if (this.answers['taskmanager'] == 'webpack') {
       // console.log('Writing webpack')
+      this.fs.copy(path.resolve(TREEFROG_TEMPLATE, 'lib/webpack/webpack.config.js'), this.destinationPath('webpack.config.js'))
       // Add to Package
       const webpackPackage = require(path.resolve(TREEFROG_TEMPLATE, 'lib/webpack/package.json'))
       pkg = merge(pkg, webpackPackage)
@@ -253,6 +261,7 @@ export default {
   grunt() {
     if (this.answers['taskmanager'] == 'grunt') {
       // console.log('Writing grunt')
+      this.fs.copy(path.resolve(TREEFROG_TEMPLATE, 'lib/grunt/Gruntfile.js'), this.destinationPath('Gruntfile.js'))
       // Add to Package
       const gruntPackage = require(path.resolve(TREEFROG_TEMPLATE, 'lib/grunt/package.json'))
       pkg = merge(pkg, gruntPackage)
