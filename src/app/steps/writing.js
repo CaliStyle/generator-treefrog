@@ -147,9 +147,11 @@ export default {
     if (this.answers['javascript'] == 'typescript') {
       // console.log('Writing typescript')
       // Copy Files
-      this.fs.copy(path.resolve(TREEFROG_TEMPLATE, 'lib/typescript/tsconfig.json'), this.destinationPath('tsconfig.js'))
-      this.fs.copy(path.resolve(TREEFROG_TEMPLATE, 'lib/typescript/typings.json'), this.destinationPath('typings.js'))
-      
+      this.fs.copy(path.resolve(TREEFROG_TEMPLATE, 'lib/typescript/tsconfig.json'), this.destinationPath('tsconfig.json'))
+      //this.fs.copy(path.resolve(TREEFROG_TEMPLATE, 'lib/typescript/typings.json'), this.destinationPath('typings.json'))
+      //this.template(path.resolve(TREEFROG_TEMPLATE, 'lib/typescript/typings.json'),  this.destinationPath('typings.json'), {answers: this.answers});
+      this.fs.copyTpl(path.resolve(TREEFROG_TEMPLATE, 'lib/typescript/typings.json'), this.destinationPath('typings.json'), {answers: this.answers})
+
       // Add to Package
       const typescriptPackage = require(path.resolve(TREEFROG_TEMPLATE, 'lib/typescript/package.json'))
       pkg = merge(pkg, typescriptPackage)
