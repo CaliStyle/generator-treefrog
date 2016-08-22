@@ -1,4 +1,5 @@
 # generator-treefrog
+[![Treefrog][treefrog-image]][treefrog-url]
 
 [![Gitter][gitter-image]][gitter-url]
 [![NPM version][npm-image]][npm-url]
@@ -75,6 +76,8 @@ information on how our projects are organized and how to get started.
 
 <img src="http://i.imgur.com/dCjNisP.png">
 
+[treefrog-image]: http://i.imgur.com/1IiVqTo.png
+[treefrog-url]: http://treefrog.io
 [npm-image]: https://img.shields.io/npm/v/trails.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/generator-treefrog
 [ci-image]: https://img.shields.io/travis/CaliStyle/generator-treefrog.svg?style=flat-square&label=Linux%20/%20OSX
