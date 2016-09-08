@@ -2,7 +2,7 @@
  * Treefrog Configuration
  * REPL: `app.config.treefrog`
  *
- * Configured by `$ yo treefrog` 
+ * Configured by `$ yo treefrog`
  * This file dictates how your files are generated.
  */
 
