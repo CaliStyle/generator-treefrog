@@ -59,8 +59,26 @@ const questions = trailsQuestions.concat(
   name: 'taskmanager',
   message: 'Task Manager',
   default: 'gulp',
-  choices: ['gulp', 'grunt (not yet supported)', 'webpack (not yet supported)']
+  choices: ['gulp', 'grunt (not yet supported)']
+},
+
+// Bundler
+{
+  type: 'list',
+  name: 'bundler',
+  message: 'Bundler',
+  default: 'webpack',
+  choices: ['webpack', 'browserfy (not yet supported)', 'other', 'none']
 }, {
+  when: function when(responses) {
+    return responses['bundler'] == 'other'
+  },
+  name: 'bundler',
+  message: 'What is the name of the Bundler?'
+},
+
+// Javascript
+{
   type: 'list',
   name: 'javascript',
   message: 'How would you like to write your javascript?',

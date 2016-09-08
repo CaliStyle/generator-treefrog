@@ -8,6 +8,7 @@
 
 module.exports = {
   taskmanager: '<%= answers.taskmanager %>',
+  bundler: '<%= answers.bundler %>',
   javascript: '<%= answers.javascript || "es6" %>',
   frontend: '<%= answers.frontend %>',
   style: '<%= answers.style %>',
