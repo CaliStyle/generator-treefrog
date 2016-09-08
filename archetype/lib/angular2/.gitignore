@@ -1,0 +1,24 @@
+# Logs
+.DS_Store
+**/.DS_Store
+.tmp
+npm-debug.log
+
+# Typings
+/typings
+/tsd_typings
+
+# Coverage directory used by tools like istanbul
+/coverage
+
+# Server
+/dist/
+
+# Dependency directory
+node_modules
+
+*.swp
+*.swo
+.idea
+*.sqlite
+/app/routes.ts

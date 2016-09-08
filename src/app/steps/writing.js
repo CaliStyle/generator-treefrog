@@ -14,7 +14,7 @@ import merge from '../../lib/package-merge'
 const TRAILS_TEMPLATE = path.dirname(require.resolve('trails/archetype'))
 const TREEFROG_TEMPLATE = path.dirname(require.resolve('../../../archetype'))
 
-const mkdirp = require('mkdirp');
+// const mkdirp = require('mkdirp');
 
 const SOURCE_CONFIG = 'treefrog.js';
 const DESTINATION_CONFIG_INDEX = 'config/index.js';
@@ -146,6 +146,15 @@ export default {
   typescript() {
     if (this.answers['javascript'] == 'typescript') {
       // console.log('Writing typescript')
+      // Copy Files
+      this.fs.copy(path.resolve(TREEFROG_TEMPLATE, 'lib/typescript/tsconfig.json'), this.destinationPath('tsconfig.json'))
+      //this.fs.copy(path.resolve(TREEFROG_TEMPLATE, 'lib/typescript/typings.json'), this.destinationPath('typings.json'))
+      //this.template(path.resolve(TREEFROG_TEMPLATE, 'lib/typescript/typings.json'),  this.destinationPath('typings.json'), {answers: this.answers});
+      this.fs.copyTpl(path.resolve(TREEFROG_TEMPLATE, 'lib/typescript/typings.json'), this.destinationPath('typings.json'), {answers: this.answers})
+
+      // Add to Package
+      const typescriptPackage = require(path.resolve(TREEFROG_TEMPLATE, 'lib/typescript/package.json'))
+      pkg = merge(pkg, typescriptPackage)
     }
   },
 
@@ -245,6 +254,7 @@ export default {
   webpack() {
     if (this.answers['bundler'] == 'webpack') {
       // console.log('Writing webpack')
+      this.fs.copy(path.resolve(TREEFROG_TEMPLATE, 'lib/webpack/webpack.config.js'), this.destinationPath('webpack.config.js'))
       // Add to Package
       const webpackPackage = require(path.resolve(TREEFROG_TEMPLATE, 'lib/webpack/package.json'))
       pkg = merge(pkg, webpackPackage)
@@ -263,6 +273,7 @@ export default {
   grunt() {
     if (this.answers['taskmanager'] == 'grunt') {
       // console.log('Writing grunt')
+      this.fs.copy(path.resolve(TREEFROG_TEMPLATE, 'lib/grunt/Gruntfile.js'), this.destinationPath('Gruntfile.js'))
       // Add to Package
       const gruntPackage = require(path.resolve(TREEFROG_TEMPLATE, 'lib/grunt/package.json'))
       pkg = merge(pkg, gruntPackage)
