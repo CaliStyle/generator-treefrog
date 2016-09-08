@@ -250,12 +250,22 @@ export default {
     }
   },
 
+  // bundler
   webpack() {
-    if (this.answers['taskmanager'] == 'webpack') {
+    if (this.answers['bundler'] == 'webpack') {
       // console.log('Writing webpack')
       this.fs.copy(path.resolve(TREEFROG_TEMPLATE, 'lib/webpack/webpack.config.js'), this.destinationPath('webpack.config.js'))
       // Add to Package
       const webpackPackage = require(path.resolve(TREEFROG_TEMPLATE, 'lib/webpack/package.json'))
+      pkg = merge(pkg, webpackPackage)
+    }
+  },
+
+  browserfy() {
+    if (this.answers['bundler'] == 'browserfy') {
+      // console.log('Writing webpack')
+      // Add to Package
+      const browserfyPackage = require(path.resolve(TREEFROG_TEMPLATE, 'lib/browserfy/package.json'))
       pkg = merge(pkg, webpackPackage)
     }
   },
