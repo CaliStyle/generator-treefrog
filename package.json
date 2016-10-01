@@ -61,7 +61,7 @@
     "yeoman-assert": "^2.2.1",
     "yeoman-environment": "^1.6.2",
     "yeoman-generator": "0.21.1",
-    "yeoman-test": "^1.4.0",
+    "yeoman-test": "^1.5.1",
     "yosay": "1.1.0"
   },
   "devDependencies": {
