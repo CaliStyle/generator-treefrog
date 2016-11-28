@@ -65,7 +65,7 @@
     "yosay": "1.1.0"
   },
   "devDependencies": {
-    "eslint": "^3.0.1",
+    "eslint": "^3.11.1",
     "eslint-config-trails": "latest",
     "babel-cli": "^6.3.17",
     "babel-core": "^6.4.0",
