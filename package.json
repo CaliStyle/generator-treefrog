@@ -51,7 +51,7 @@
     "chalk": "1.1.1",
     "detect-conflict": "^1.0.0",
     "falafel": "^1.2.0",
-    "generator-trails": "^1.0.11",
+    "generator-trails": "^2.0.1",
     "lodash": "^4.0.0",
     "path-exists": "^2.0.0",
     "print-message": "1.4.0",
